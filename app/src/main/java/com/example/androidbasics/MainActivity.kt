@@ -13,13 +13,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val btnAdd : Button = findViewById(R.id.btnAdd)
-        var count = 0
         btnAdd.setOnClickListener {
-
-            val textCount: TextView = findViewById(R.id.tvAdd)
-            textCount.text = "$count"
-            count++
-            if(count == 10) count = 0
+            val numberOne: EditText = findViewById(R.id.etNumberOne)
+            val numberTwo: EditText = findViewById(R.id.etNumberTwo)
+            val resultTextView: TextView = findViewById(R.id.tvResult)
+            resultTextView.text = "Result: ${numberOne.text.toString().toInt() + numberTwo.text.toString().toInt()}"
         }
     }
 }
