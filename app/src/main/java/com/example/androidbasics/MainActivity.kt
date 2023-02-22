@@ -13,12 +13,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val btnAdd : Button = findViewById(R.id.btnAdd)
+        var count = 0
         btnAdd.setOnClickListener {
-            val firstName = findViewById<EditText>(R.id.etFirstName).text.toString()
-            val lastName = findViewById<EditText>(R.id.etLastName).text.toString()
-            val birthDate = findViewById<EditText>(R.id.etBirthDate).text.toString()
-            val country =findViewById<EditText>(R.id.etCountry).text.toString()
-            Log.i("MainActivity", "Name: $firstName $lastName, born on: $birthDate, nationality: $country")
+
+            val textCount: TextView = findViewById(R.id.tvAdd)
+            textCount.text = "$count"
+            count++
+            if(count == 10) count = 0
         }
     }
 }
