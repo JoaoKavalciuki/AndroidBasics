@@ -8,46 +8,22 @@
     android:padding="10dp"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/ivImage"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnResult"
-        android:layout_width="wrap_content"
-        android:text="@string/add"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etNumberOne" />
-
-    <EditText
-        android:id="@+id/etNumberOne"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:hint="@string/first_number"
-        app:layout_constraintEnd_toStartOf="@+id/etNumberTwo"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="304dp" />
-
-    <EditText
-        android:id="@+id/etNumberTwo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:hint="@string/second_number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/etNumberOne"
-        tools:layout_editor_absoluteY="304dp" />
-
-    <TextView
-        android:id="@+id/tvResult"
+        android:id="@+id/btnAddImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/result"
-        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etNumberTwo" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivImage"
+        android:text="@string/add_image"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
