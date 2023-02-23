@@ -9,4 +9,12 @@
     <string name="first_number">First number</string>
     <string name="result">Result</string>
     <string name="add_image">Add Image</string>
+    <string name="what_kind_of_meet_is_in_your_burguer">What kind of meet is in your burguer?</string>
+    <string name="pork">Pork</string>
+    <string name="chicken">Chicken</string>
+    <string name="beef">Beef</string>
+    <string name="cheese">Cheese</string>
+    <string name="onions">Onions</string>
+    <string name="salad">Salad</string>
+    <string name="order">Order</string>
 </resources>
