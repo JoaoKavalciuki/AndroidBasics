@@ -17,4 +17,12 @@
     <string name="onions">Onions</string>
     <string name="salad">Salad</string>
     <string name="order">Order</string>
+    <string name="show_toast">Show toast</string>
+    <string name="what_is_your_order">What is your order?</string>
+    <string name="vegetarian">Vegetarian</string>
+    <string name="any_side_dishes">Any side dishes?</string>
+    <string name="fries">Fries</string>
+    <string name="soda">Soda</string>
+    <string name="ketchup">Ketchup</string>
+    <string name="mustard">Mustard</string>
 </resources>

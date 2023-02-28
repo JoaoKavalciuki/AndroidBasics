@@ -3,13 +3,7 @@ package com.example.androidbasics
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.RadioButton
-import android.widget.RadioGroup
-import android.widget.TextView
+import android.widget.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -18,18 +12,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val btnOrder : Button = findViewById(R.id.btnOrder)
         btnOrder.setOnClickListener {
-            val meatsRadioGroup = findViewById<RadioGroup>(R.id.rgMeat)
-            val meat = findViewById<RadioButton>(meatsRadioGroup.checkedRadioButtonId)
-            val cheese = findViewById<CheckBox>(R.id.cbCheese).isChecked
-            val salad = findViewById<CheckBox>(R.id.cbSalad).isChecked
-            val onions = findViewById<CheckBox>(R.id.cbOnions).isChecked
-            val orderString = "Your order is a hamburger with:\n" +
-                    "${meat.text}\n" +
-                    (if(cheese)  "Cheese\n" else "") +
-                    (if(salad) "Salad\n" else "") +
-                    (if (onions) "Onions" else "")
-            val textView = findViewById<TextView>(R.id.tvOrder)
-            textView.text = orderString
+            val textOrder : TextView = findViewById(R.id.orderText)
+            val fillingTypes: RadioGroup = findViewById(R.id.rgFilling)
+            val choosedFilling: RadioButton = findViewById(fillingTypes.checkedRadioButtonId)
+            val fries = findViewById<CheckBox>(R.id.cbFries).isChecked
+            val soda = findViewById<CheckBox>(R.id.cbSoda).isChecked
+            val ketchup = findViewById<CheckBox>(R.id.cbKetchup).isChecked
+            val mustard = findViewById<CheckBox>(R.id.cbMustard).isChecked
+            val orderString = "You order a ${choosedFilling.text} burger with:\n" +
+                    (if(fries) "Fries\n" else "") +
+                    (if(soda) "Soda\n" else "") +
+                    (if(ketchup) "Ketchup\n" else "") +
+                    (if(mustard) "and Mustard\n" else "")
+            textOrder.text = orderString
+            Toast.makeText(this, "Ordered", Toast.LENGTH_SHORT).show()
         }
     }
 }
