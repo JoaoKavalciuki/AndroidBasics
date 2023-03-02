@@ -25,4 +25,6 @@
     <string name="soda">Soda</string>
     <string name="ketchup">Ketchup</string>
     <string name="mustard">Mustard</string>
+    <string name="ordered">Ordered</string>
+    <string name="make_another_order">Make another order</string>
 </resources>
