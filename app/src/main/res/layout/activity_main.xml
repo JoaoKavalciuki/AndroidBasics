@@ -8,107 +8,16 @@
     android:padding="10dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/questionText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Which one will be your burger filling?"
-        android:textSize="23sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <RadioGroup
-        android:id="@+id/rgFilling"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questionText">
-
-        <RadioButton
-            android:id="@+id/rbBeef"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="@string/beef" />
-
-        <RadioButton
-            android:id="@+id/rbChicken"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/chicken" />
-
-
-        <RadioButton
-            android:id="@+id/rbPork"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/pork" />
-
-        <RadioButton
-            android:id="@+id/rbVegetarian"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/vegetarian" />
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:text="@string/any_side_dishes"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rgFilling" />
-
-
-    <CheckBox
-        android:id="@+id/cbFries"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/fries"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <CheckBox
-        android:id="@+id/cbSoda"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/soda"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cbFries" />
-
-    <CheckBox
-        android:id="@+id/cbKetchup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/ketchup"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cbSoda" />
-
-    <CheckBox
-        android:id="@+id/cbMustard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/mustard"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cbKetchup" />
 
     <Button
-        android:id="@+id/btnOrder"
+        android:id="@+id/btnPermission"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/order"
+        android:text="@string/request_permission"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.645" />
+        app:layout_constraintVertical_bias="0.499" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

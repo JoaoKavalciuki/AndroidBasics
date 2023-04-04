@@ -27,4 +27,5 @@
     <string name="mustard">Mustard</string>
     <string name="ordered">Ordered</string>
     <string name="make_another_order">Make another order</string>
+    <string name="request_permission">Request Permission</string>
 </resources>

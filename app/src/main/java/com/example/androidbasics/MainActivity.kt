@@ -1,44 +1,58 @@
 package com.example.androidbasics
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.*
+import androidx.annotation.RequiresApi
+import androidx.core.app.ActivityCompat
 
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val btnOrder : Button = findViewById(R.id.btnOrder)
 
-        btnOrder.setOnClickListener {
+        val btnRequest: Button = findViewById(R.id.btnPermission)
+        btnRequest.setOnClickListener { permissionsToAsk() }
 
-            //val textOrder : TextView = findViewById(R.id.orderText)
-            val fillingTypes: RadioGroup = findViewById(R.id.rgFilling)
-            val choosedFilling: RadioButton = findViewById(fillingTypes.checkedRadioButtonId)
-            val fries = findViewById<CheckBox>(R.id.cbFries).isChecked
-            val soda = findViewById<CheckBox>(R.id.cbSoda).isChecked
-            val ketchup = findViewById<CheckBox>(R.id.cbKetchup).isChecked
-            val mustard = findViewById<CheckBox>(R.id.cbMustard).isChecked
-            /*val orderString = "You order a ${choosedFilling.text} burger with:\n" +
-                    (if(fries.) "Fries\n" else "") +
-                    (if(soda) "Soda\n" else "") +
-                    (if(ketchup) "Ketchup\n" else "") +
-                    (if(mustard) "and Mustard\n" else "")
-            textOrder.text = orderString*/
-            Toast.makeText(this, "Ordered", Toast.LENGTH_SHORT).show()
-            val orderString = StringBuilder()
-            orderString.append("${choosedFilling.text} burger with:\n")
-            if(fries) orderString.append("Fries\n")
-            if(soda) orderString.append("Soda\n")
-            if(ketchup) orderString.append("Ketchup\n")
-            if(mustard) orderString.append("Mustard\n")
+    }
 
-             Intent(this, OrdersActivity::class.java).also{
-                 it.putExtra("EXTRA_ORDER", orderString.toString())
-                 startActivity(it)
-             }
+    private fun hasForegroundLocation() =
+        ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
+
+    @RequiresApi(Build.VERSION_CODES.Q)
+    private fun hasBackGroundLocation() =
+        ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_BACKGROUND_LOCATION) == PackageManager.PERMISSION_GRANTED
+
+    @RequiresApi(Build.VERSION_CODES.Q)
+    private fun permissionsToAsk(){
+        val hasNotPermission = mutableListOf<String>()
+        //Allow all the time
+        if(!hasBackGroundLocation()) hasNotPermission.add(Manifest.permission.ACCESS_BACKGROUND_LOCATION)
+        //Allow while using the app
+        if(!hasForegroundLocation()) hasNotPermission.add(Manifest.permission.ACCESS_COARSE_LOCATION)
+
+        if(hasNotPermission.isNotEmpty()){
+            ActivityCompat.requestPermissions(this, hasNotPermission.toTypedArray(), 0)
+        }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if(requestCode == 0 && grantResults.isNotEmpty()){
+            for(i in grantResults.indices){
+                if(grantResults[i] == PackageManager.PERMISSION_GRANTED) Log.d("RequestedPermission", "${permissions[i]} accepted")
+                else Log.w("RequestedPermission", "${permissions[i]} denied")
+            }
         }
     }
 }
