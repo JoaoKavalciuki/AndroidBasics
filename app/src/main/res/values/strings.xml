@@ -29,4 +29,6 @@
     <string name="make_another_order">Make another order</string>
     <string name="request_permission">Request Permission</string>
     <string name="choose_the_photo">Choose the photo</string>
+    <string name="search">Search</string>
+    <string name="insert_url_here">Insert URL here</string>
 </resources>

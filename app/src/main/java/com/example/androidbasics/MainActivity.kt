@@ -3,6 +3,7 @@ package com.example.androidbasics
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -22,19 +23,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val btnRequestPermission: Button = findViewById(R.id.btnRequestPermission)
-        btnRequestPermission.setOnClickListener {
-            requestPermissions.launch(arrayOf(Manifest.permission.CAMERA, Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_BACKGROUND_LOCATION, Manifest.permission.RECORD_AUDIO))
+        val btnSearch: Button = findViewById(R.id.btnSearch)
+        val etUrl = findViewById<EditText>(R.id.etUrl)
+        btnSearch.setOnClickListener {
+            val url = etUrl.text.toString()
+            val urlIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            startActivity(urlIntent)
         }
     }
-
-    //Verifica se a permissão foi garantida ou não através do contrato
-    private val requestPermissions =
-        registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()){
-           it.forEach{
-               if(it.value)Log.i("Permission", "Permission ${it.key} granted")
-                else Log.w("Permission", "Permission ${it.key} not granted")
-           }
-
-        }
 }
