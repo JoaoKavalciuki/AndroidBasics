@@ -31,4 +31,6 @@
     <string name="choose_the_photo">Choose the photo</string>
     <string name="search">Search</string>
     <string name="insert_url_here">Insert URL here</string>
+    <string name="add_to_favorite">Add to favorite</string>
+    <string name="finish_the_app">Finish the app</string>
 </resources>
