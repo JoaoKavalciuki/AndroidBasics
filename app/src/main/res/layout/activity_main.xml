@@ -8,37 +8,26 @@
     android:padding="10dp"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnDialog1"
+    <TextView
+        android:id="@+id/tvSelectCampus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/open_first_dialog"
-        app:layout_constraintBottom_toTopOf="@+id/btnDialog2"
+        android:text="@string/fatecs"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnDialog2"
+    <Spinner
+        android:id="@+id/spFatecs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/open_second_dialog"
-        app:layout_constraintBottom_toTopOf="@+id/btnDialog3"
+        android:layout_marginTop="60dp"
+        android:entries="@array/fatecs"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnDialog1" />
-
-    <Button
-        android:id="@+id/btnDialog3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/open_third_dialog"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnDialog2" />
+        app:layout_constraintTop_toBottomOf="@+id/tvSelectCampus" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

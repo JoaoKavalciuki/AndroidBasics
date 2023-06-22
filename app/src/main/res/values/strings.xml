@@ -1,44 +1,25 @@
 <resources>
     <string name="app_name">AndroidBasics</string>
-    <string name="first_name">First Name</string>
-    <string name="second_name">Last Name</string>
-    <string name="birth_date">Birth Date</string>
-    <string name="country">Country</string>
-    <string name="add">Add</string>
-    <string name="second_number">Second number</string>
-    <string name="first_number">First number</string>
-    <string name="result">Result</string>
-    <string name="add_image">Add Image</string>
-    <string name="what_kind_of_meet_is_in_your_burguer">What kind of meet is in your burguer?</string>
-    <string name="pork">Pork</string>
-    <string name="chicken">Chicken</string>
-    <string name="beef">Beef</string>
-    <string name="cheese">Cheese</string>
-    <string name="onions">Onions</string>
-    <string name="salad">Salad</string>
-    <string name="order">Order</string>
-    <string name="show_toast">Show toast</string>
-    <string name="what_is_your_order">What is your order?</string>
-    <string name="vegetarian">Vegetarian</string>
-    <string name="any_side_dishes">Any side dishes?</string>
-    <string name="fries">Fries</string>
-    <string name="soda">Soda</string>
-    <string name="ketchup">Ketchup</string>
-    <string name="mustard">Mustard</string>
-    <string name="ordered">Ordered</string>
-    <string name="make_another_order">Make another order</string>
-    <string name="request_permission">Request Permission</string>
-    <string name="choose_the_photo">Choose the photo</string>
-    <string name="search">Search</string>
-    <string name="insert_url_here">Insert URL here</string>
-    <string name="add_to_favorite">Add to favorite</string>
-    <string name="finish_the_app">Finish the app</string>
-    <string name="dialog_1">Dialog 1</string>
-    <string name="dialog_2">Dialog 2</string>
-    <string name="dialog_3">Dialog 3</string>
-    <string name="add_to_contacts">Add to Contacts</string>
-    <string name="add_item_to_favorite">Add item to favorite</string>
-    <string name="open_first_dialog">Open first Dialog</string>
-    <string name="open_second_dialog">Open second dialog</string>
-    <string name="open_third_dialog">Open third dialog</string>
+    <string name="fatecs">Selecione uma das fatecs para realizar a inscrição em Desenvolvimento de Software Multiplataforma</string>
+    <string-array name="fatecs">
+        <item>Araras</item>
+        <item>Zona Leste</item>
+        <item>Franca</item>
+        <item>Osasco</item>
+        <item>São José dos Campos</item>
+        <item>Cotia</item>
+        <item>Diadema</item>
+        <item>Itatiba</item>
+        <item>Mauá</item>
+        <item>Zona Sul</item>
+        <item>Itapira</item>
+        <item>Registro</item>
+        <item>Praia Grande</item>
+        <item>Votorantim</item>
+        <item>Matão</item>
+        <item>Itaquera</item>
+        <item>Jacareí</item>
+        <item>Jahu</item>
+
+    </string-array>
 </resources>
