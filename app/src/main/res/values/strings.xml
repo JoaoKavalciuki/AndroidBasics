@@ -33,4 +33,12 @@
     <string name="insert_url_here">Insert URL here</string>
     <string name="add_to_favorite">Add to favorite</string>
     <string name="finish_the_app">Finish the app</string>
+    <string name="dialog_1">Dialog 1</string>
+    <string name="dialog_2">Dialog 2</string>
+    <string name="dialog_3">Dialog 3</string>
+    <string name="add_to_contacts">Add to Contacts</string>
+    <string name="add_item_to_favorite">Add item to favorite</string>
+    <string name="open_first_dialog">Open first Dialog</string>
+    <string name="open_second_dialog">Open second dialog</string>
+    <string name="open_third_dialog">Open third dialog</string>
 </resources>
