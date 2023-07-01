@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">AndroidBasics</string>
+    <string name="app_name">Recycler View - My PC Components</string>
     <string name="fatecs">Selecione uma das fatecs para realizar a inscrição em Desenvolvimento de Software Multiplataforma</string>
     <string name="select_your_departure_time">Select your departure time</string>
     <string name="spinner_description">Spinner to select your departure time</string>
+    <string name="add_todo">Add Todo</string>
+    <string name="add">Add</string>
 </resources>

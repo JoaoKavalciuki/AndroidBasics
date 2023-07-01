@@ -1,35 +1,40 @@
 package com.example.androidbasics
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.AdapterView
-import android.widget.AdapterView.OnItemSelectedListener
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.androidbasics.models.PcComponent
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var pcComponentAdapter : PcComponentAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val departureOptions = listOf("Depart now", "Set departure time", "Set arrive time",  "Latest Departure")
-        val adapterDepartures = ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, departureOptions)
-        val spinner: Spinner = findViewById(R.id.spFatecs)
-        spinner.adapter = adapterDepartures
-        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+        initRecyclerView()
+        addDataSource()
+    }
 
-            override fun onItemSelected(adapterView: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                // @MainActivity is used here because the Toast is inside of the anonymous class, not the activity
-                Toast.makeText(this@MainActivity,
-                    "${adapterView?.getItemAtPosition(position).toString()} selected",
-                    Toast.LENGTH_SHORT).show()
-            }
+    private fun addDataSource() {
+        val dataSource = DataSource.createDataSet()
 
-            override fun onNothingSelected(p0: AdapterView<*>?) {
+        this.pcComponentAdapter.setDataSet(dataSource)
+    }
 
-            }
+    private fun initRecyclerView(){
+        this.pcComponentAdapter = PcComponentAdapter{ pcComponent ->
+            openLink(pcComponent)
         }
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = this.pcComponentAdapter
+    }
+
+    private fun openLink(pcComponent: PcComponent){
+        val url = Intent(Intent.ACTION_VIEW, Uri.parse(pcComponent.buyLink))
+        startActivity(url)
     }
 }
