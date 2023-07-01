@@ -1,10 +1,9 @@
 package com.example.androidbasics
 
-import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.androidbasics.fragments.FirstFragment
+import com.example.androidbasics.fragments.SecondFragment
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -14,5 +13,26 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val firstFragment = FirstFragment()
+        val secondFragment = SecondFragment()
+
+        supportFragmentManager.beginTransaction().apply{
+            replace(R.id.flFragment, firstFragment)
+            commit()
+        }
+
+        btnFragment1.setOnClickListener {
+            supportFragmentManager.beginTransaction().apply{
+                replace(R.id.flFragment, firstFragment)
+                commit()
+            }
+        }
+
+        btnFragment2.setOnClickListener {
+            supportFragmentManager.beginTransaction().apply {
+                replace(R.id.flFragment, secondFragment)
+                commit()
+            }
+        }
     }
 }

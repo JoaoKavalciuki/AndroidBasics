@@ -28,9 +28,8 @@
         app:layout_constraintStart_toEndOf="@+id/btnFragment1"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.fragment.app.FragmentContainerView
-        android:name="com.example.androidbasics.fragments.FirstFragment"
-        android:id="@+id/fragment1"
+    <FrameLayout
+        android:id="@+id/flFragment"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
