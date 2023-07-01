@@ -10,7 +10,7 @@
         android:id="@+id/tvFirstFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Showing Home fragment"
+        android:text="Showing account fragment"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
