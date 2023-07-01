@@ -18,12 +18,14 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager.beginTransaction().apply{
             replace(R.id.flFragment, firstFragment)
+            addToBackStack("First Fragment")
             commit()
         }
 
         btnFragment1.setOnClickListener {
             supportFragmentManager.beginTransaction().apply{
                 replace(R.id.flFragment, firstFragment)
+                addToBackStack("Second Fragment")
                 commit()
             }
         }
