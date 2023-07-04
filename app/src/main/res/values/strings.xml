@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Android Basics</string>
+    <string name="menu_opened">Left menu opened</string>
+    <string name="menu_closed">Left menu closed</string>
 </resources>
