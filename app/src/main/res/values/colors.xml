@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="pink">#E300EB</color>
     <color name="green_android">#3DDC84</color>
+    <color name="deep_blue">#0013de</color>
 </resources>
