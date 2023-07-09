@@ -1,38 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
-
     <LinearLayout
-        android:id="@+id/llTop"
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:gravity="center"
-        android:background="@color/deep_blue"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_weight="1">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center">
 
-        <View
-            android:id="@+id/dragableView"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:background="@color/black"/>
+        <TextView
+            android:id="@+id/tvMediaPlayerServioe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Service for playing a song"
+            android:textSize="30sp"
+            />
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start"
+            android:textStyle=""/>
+
+        <Button
+            android:id="@+id/btnStop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/red"
+            android:text="Stop"/>
+
+
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/llBottom"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:gravity="center"
-        android:background="@color/red"
-        android:orientation="vertical"
-        android:layout_weight="1"/>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
