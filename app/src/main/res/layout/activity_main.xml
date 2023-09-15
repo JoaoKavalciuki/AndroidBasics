@@ -18,29 +18,12 @@
         android:gravity="center">
 
         <TextView
-            android:id="@+id/tvMediaPlayerServioe"
+            android:id="@+id/tvMVVM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Service for playing a song"
+            android:text="MVVM init"
             android:textSize="30sp"
             />
-
-        <Button
-            android:id="@+id/btnStart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Start"
-            android:textStyle=""/>
-
-        <Button
-            android:id="@+id/btnStop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/red"
-            android:text="Stop"/>
-
-
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
