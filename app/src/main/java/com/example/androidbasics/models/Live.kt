@@ -1,4 +1,4 @@
-package com.example.androidbasics.model
+package com.example.androidbasics.models
 
 data class Live(
     var title: String,

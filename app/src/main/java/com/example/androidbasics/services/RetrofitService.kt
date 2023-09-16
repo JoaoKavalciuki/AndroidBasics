@@ -1,6 +1,6 @@
-package com.example.androidbasics.service
+package com.example.androidbasics.services
 
-import com.example.androidbasics.model.Live
+import com.example.androidbasics.models.Live
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
