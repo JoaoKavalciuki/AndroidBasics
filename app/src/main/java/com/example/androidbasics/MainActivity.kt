@@ -10,20 +10,26 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.androidbasics.adapters.MainAdapter
 import com.example.androidbasics.databinding.ActivityMainBinding
-import com.example.androidbasics.repositories.MainRepository
-import com.example.androidbasics.services.RetrofitService
-import com.example.androidbasics.viewmodel.main.MainViewModel
-import com.example.androidbasics.viewmodel.main.MainViewModelFactory
 
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityMainBinding
+    private var counter = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        this.binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
+
+    override fun onStart() {
+        super.onStart()
+        this.binding.btnCount.setOnClickListener {
+            counter++
+            binding.tvCounter.text = "Contador: $counter"
+        }
+    }
+
 }
