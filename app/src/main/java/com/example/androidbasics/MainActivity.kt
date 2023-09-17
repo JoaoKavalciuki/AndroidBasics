@@ -4,18 +4,18 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androidbasics.adapters.MainAdapter
 import com.example.androidbasics.databinding.ActivityMainBinding
+import com.example.androidbasics.models.LanguagesMockDataSet
+import com.example.androidbasics.models.MobileLanguage
 
 
 class MainActivity : AppCompatActivity() {
 
+
+    private lateinit var mainAdapter: MainAdapter
     private lateinit var binding : ActivityMainBinding
-    private var counter = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,10 +26,29 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        this.binding.btnCount.setOnClickListener {
-            counter++
-            binding.tvCounter.text = "Contador: $counter"
+        initRecyclerView()
+        addDataSource()
+    }
+
+    private fun initRecyclerView(){
+        mainAdapter = MainAdapter({mobileLanguage ->
+            openLink(mobileLanguage.link)
+        }, this.binding)
+
+        binding.rvLanguages.apply{
+            adapter = mainAdapter
+            layoutManager = LinearLayoutManager(this@MainActivity)
         }
+    }
+
+    private fun openLink(url: String){
+        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        startActivity(browserIntent)
+    }
+    private fun addDataSource() {
+
+        val dataSet = LanguagesMockDataSet.createDataSet()
+        mainAdapter.setLanguagesList(dataSet)
     }
 
 }

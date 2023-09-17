@@ -6,16 +6,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.androidbasics.R
+import com.example.androidbasics.databinding.ActivityMainBinding
 import com.example.androidbasics.databinding.ResItemLiveBinding
-import com.example.androidbasics.models.Live
+import com.example.androidbasics.models.MobileLanguage
 
-class MainAdapter(private val onItemClicked: (Live) -> Unit) : RecyclerView.Adapter<MainViewHolder>(){
+class MainAdapter(private val onItemClicked: (MobileLanguage) -> Unit, private val binding: ActivityMainBinding) : RecyclerView.Adapter<MainViewHolder>(){
 
-    private var lives = mutableListOf<Live>()
+    private var mobileLanguages = mutableListOf<MobileLanguage>()
 
-    fun setLiveList(lives: List<Live>){
-        this.lives = lives.toMutableList()
-        notifyDataSetChanged()
+    fun setLanguagesList(mobileLanguages: List<MobileLanguage>){
+        this.mobileLanguages = mobileLanguages.toMutableList()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
@@ -25,20 +25,23 @@ class MainAdapter(private val onItemClicked: (Live) -> Unit) : RecyclerView.Adap
     }
 
     override fun getItemCount(): Int {
-        return this.lives.size
+        return this.mobileLanguages.size
     }
 
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
-        val live = lives[position]
-        holder.bind(live, onItemClicked)
+        val mobileLanguage = mobileLanguages[position]
+        holder.bind(mobileLanguage, onItemClicked)
 
     }
 }
 
 class MainViewHolder(val binding: ResItemLiveBinding) : RecyclerView.ViewHolder(binding.root){
-    fun bind(live: Live, onItemClicked: (Live) -> Unit){
-        binding.tvAuthor.text = live.author
-        binding.tvTitle.text  = live.title
+    private val langImage = binding.ivLanguage
+    fun bind(mobileLanguage: MobileLanguage, onItemClicked: (MobileLanguage) -> Unit){
+        binding.tvLanguageName.text = mobileLanguage.language
+        binding.tvDevName.text  = mobileLanguage.developer
+        binding.tvReleaseYear.text = "Ano de lançamento ${mobileLanguage.releaseYear}"
+
 
         val requestOptions = RequestOptions()
             .placeholder(R.drawable.ic_launcher_foreground)
@@ -47,11 +50,11 @@ class MainViewHolder(val binding: ResItemLiveBinding) : RecyclerView.ViewHolder(
 
         Glide.with(itemView.context)
             .applyDefaultRequestOptions(requestOptions)
-            .load(live.thumbnailUrl)
-            .into(binding.ivThumbnail)
+            .load(mobileLanguage.image)
+            .into(langImage)
 
         itemView.setOnClickListener {
-            onItemClicked(live)
+            onItemClicked(mobileLanguage)
         }
     }
 }
