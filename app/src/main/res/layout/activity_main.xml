@@ -8,13 +8,25 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tvUsersQuantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Room Database init"
+        android:text="Registered users: "
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textStyle="bold"
-        android:textSize="20sp"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnNewUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Add new user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUsersQuantity" />
 </androidx.constraintlayout.widget.ConstraintLayout>
