@@ -11,6 +11,7 @@ import com.example.androidbasics.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 
 class MainActivity : AppCompatActivity() {
@@ -29,10 +30,12 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         this.appDatabase = AppDatabase.getInstance(this)
         this.userDao = appDatabase.userDao()
-        CoroutineScope(Dispatchers.Main).launch {
+        CoroutineScope(Dispatchers.IO).launch {
             val usersRegistered = userDao.getTotalUsers()
 
+            withContext(Dispatchers.Main){
             binding.tvUsersQuantity.text = "Users registered untill now: $usersRegistered"
+            }
         }
 
         this.binding.btnNewUser.setOnClickListener {

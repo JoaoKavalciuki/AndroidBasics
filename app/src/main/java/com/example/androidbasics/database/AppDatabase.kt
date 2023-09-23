@@ -10,7 +10,7 @@ import androidx.sqlite.db.SupportSQLiteOpenHelper
 import com.example.androidbasics.database.daos.UserDao
 import com.example.androidbasics.database.models.User
 
-@Database(entities = [User::class], version = 1)
+@Database(entities = [User::class], version = 2)
 abstract class AppDatabase : RoomDatabase(){
     abstract fun userDao(): UserDao
 
@@ -30,7 +30,8 @@ abstract class AppDatabase : RoomDatabase(){
             Room.databaseBuilder(
                 context.applicationContext,
                 AppDatabase::class.java, DATABASE_NAME
-            ).build()
+            ).fallbackToDestructiveMigration().build()
+
 
     }
 }
